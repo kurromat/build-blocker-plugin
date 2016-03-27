@@ -135,26 +135,41 @@
               </execution>
             </executions>
           </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-failsafe-plugin</artifactId>
-            <configuration>
-              <excludes>
-                <exclude>**/*UnitTest.java</exclude>
-              </excludes>
-            </configuration>
-            <executions>
-              <execution>
-                <goals>
-                  <goal>integration-test</goal>
-                  <goal>verify</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
         </plugins>
     </build>
-    
+
+    <profiles>
+      <profile>
+        <id>unittest</id>
+          <build>
+            <plugins>
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-surefire-plugin</artifactId>
+              <configuration>
+                <includes>
+                  <include>**/*UnitTest.java</include>
+                </includes>
+              </configuration>
+          </plugin>
+        </plugins>
+      </profile>
+      <profile>
+        <id>integtest</id>
+          <build>
+            <plugins>
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-surefire-plugin</artifactId>
+              <configuration>
+                <excludes>
+                  <exclude>**/*UnitTest.java</exclude>
+                </excludes>
+              </configuration>
+          </plugin>
+        </plugins>
+      </profile>
+    </profiles>    
     <dependencies>
         <dependency>
             <groupId>org.hamcrest</groupId>
