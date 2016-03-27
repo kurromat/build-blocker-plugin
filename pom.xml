@@ -167,6 +167,15 @@
                   <exclude>**/*UnitTest.java</exclude>
                 </excludes>
               </configuration>
+              <executions>
+                <execution>
+                  <id>integtest</id>
+                  <phase>integration-test</phase>
+                  <goals>
+                    <goal>test</goal>
+                  </goals>
+                </execution>
+              </executions>
             </plugin>
           </plugins>
         </build>
