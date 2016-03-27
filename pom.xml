@@ -141,8 +141,8 @@
     <profiles>
       <profile>
         <id>unittest</id>
-          <build>
-            <plugins>
+        <build>
+          <plugins>
             <plugin>
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-surefire-plugin</artifactId>
@@ -151,13 +151,14 @@
                   <include>**/*UnitTest.java</include>
                 </includes>
               </configuration>
-          </plugin>
-        </plugins>
+            </plugin>
+          </plugins>
+        </build>
       </profile>
       <profile>
         <id>integtest</id>
-          <build>
-            <plugins>
+        <build>
+          <plugins>
             <plugin>
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-surefire-plugin</artifactId>
@@ -166,8 +167,9 @@
                   <exclude>**/*UnitTest.java</exclude>
                 </excludes>
               </configuration>
-          </plugin>
-        </plugins>
+            </plugin>
+          </plugins>
+        </build>
       </profile>
     </profiles>    
     <dependencies>
