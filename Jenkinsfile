@@ -1,14 +1,10 @@
 node {
  stage 'Build'
- env.PATH = "${tool 'Maven 3'}/bin:${env.PATH}"
  checkout scm
  mvn 'clean compile'
  
  stage 'Test'
- mvn 'test -P unittest'
- 
- stage 'IntegrationTest'
- mvn 'test -P integtest'
+ mvn 'test'
  
  stage 'Install'
  mvn 'install -DskipTests'
