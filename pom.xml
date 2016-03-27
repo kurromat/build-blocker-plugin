@@ -124,7 +124,7 @@
             <artifactId>maven-surefire-plugin</artifactId>
             <configuration>
               <includes>
-                <include>.*UnitTest.*</include>
+                <include>**/.*UnitTest.java</include>
               </includes>
             </configuration>
           </plugin>
@@ -133,7 +133,7 @@
             <artifactId>maven-failsafe-plugin</artifactId>
             <configuration>
               <excludes>
-                <exclude>.*UnitTest.*</exclude>
+                <exclude>**/.*UnitTest.java</exclude>
               </excludes>
             </configuration>
             <executions>
