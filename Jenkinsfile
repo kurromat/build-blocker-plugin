@@ -5,10 +5,10 @@ node {
  mvn 'clean compile'
  
  stage 'Test'
- mvn 'test'
+ mvn 'test -P unittest'
  
  stage 'IntegrationTest'
- mvn 'verify'
+ mvn 'test -P integtest'
  
  stage 'Install'
  mvn 'install -DskipTests'
