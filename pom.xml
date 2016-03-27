@@ -124,7 +124,7 @@
             <artifactId>maven-surefire-plugin</artifactId>
             <configuration>
               <includes>
-                <include>.*UnitTest.*]</include>
+                <include>.*UnitTest.*</include>
               </includes>
             </configuration>
           </plugin>
@@ -133,9 +133,17 @@
             <artifactId>maven-failsafe-plugin</artifactId>
             <configuration>
               <excludes>
-                <exclude>.*UnitTest.*]</include>
+                <exclude>.*UnitTest.*</include>
               </excludes>
             </configuration>
+            <executions>
+          <execution>
+            <goals>
+              <goal>integration-test</goal>
+              <goal>verify</goal>
+            </goals>
+          </execution>
+        </executions>
         </plugin>
         </plugins>
     </build>
