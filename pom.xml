@@ -133,7 +133,7 @@
             <artifactId>maven-failsafe-plugin</artifactId>
             <configuration>
               <excludes>
-                <exclude>.*UnitTest.*</include>
+                <exclude>.*UnitTest.*</exclude>
               </excludes>
             </configuration>
             <executions>
